@@ -1,0 +1,21 @@
+{
+  "name": "@luncheon/esbuild-plugin-gzip",
+  "version": "0.0.0",
+  "description": "Gzip and Brotli compression for esbuild",
+  "license": "WTFPL",
+  "repository": "luncheon/esbuild-plugin-gzip",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "esbuild"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "@types/node": "^15.0.0",
+    "esbuild": "^0.11.15",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "esbuild": ">=0.11.15"
+  }
+}
