@@ -31,7 +31,9 @@ gzipPlugin({
   uncompressed: true,
   gzip: true,
   brotli: true,
-  onEnd: ({ outputFiles }) => {}
+  onEnd: ({ outputFiles }) => {
+    // outputFiles.forEach(({ path, contents }) => {})
+  }
 })
 ```
 
