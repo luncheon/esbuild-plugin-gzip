@@ -1,6 +1,6 @@
 {
   "name": "@luncheon/esbuild-plugin-gzip",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Gzip and Brotli compression for esbuild",
   "license": "WTFPL",
   "repository": "luncheon/esbuild-plugin-gzip",

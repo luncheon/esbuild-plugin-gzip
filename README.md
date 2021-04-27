@@ -5,7 +5,7 @@ Gzip and Brotli compression for [esbuild](https://esbuild.github.io/).
 ## Installation
 
 ```sh
-$ npm i -D esbuild luncheon/esbuild-plugin-gzip
+$ npm i -D esbuild @luncheon/esbuild-plugin-gzip
 ```
 
 ## Usage Example
