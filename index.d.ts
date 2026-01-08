@@ -1,4 +1,4 @@
-import type { Plugin } from 'esbuild'
+import type { OutputFile, Plugin } from 'esbuild'
 
 export interface CompressResult {
   outputFiles: {
@@ -7,10 +7,14 @@ export interface CompressResult {
   }[]
 }
 
+export interface CompressOption {
+  readonly filter: RegExp | { readonly test: (path: string, outputFile: OutputFile) => boolean }
+}
+
 export interface Options {
-  readonly uncompressed?: boolean
-  readonly gzip?: boolean
-  readonly brotli?: boolean
+  readonly uncompressed?: boolean | CompressOption
+  readonly gzip?: boolean | CompressOption
+  readonly brotli?: boolean | CompressOption
   onEnd?(result: CompressResult): void
 }
 

@@ -28,12 +28,29 @@ esbuild.build({
 
 ```js
 gzipPlugin({
-  uncompressed: true,
-  gzip: true,
-  brotli: true,
+  uncompressed: true, // raw output file emission
+  gzip: true,         // gzip compressed output file emission
+  brotli: true,       // brotli compressed output file emission
   onEnd: ({ outputFiles }) => {
     // outputFiles.forEach(({ path, contents }) => {})
-  }
+  },
+})
+```
+
+Each file emission option can be an object with:
+
+- `filter: RegExp | { test: (outputFilePath: string, outputFile: OutputFile) => boolean }`
+
+```js
+gzipPlugin({
+  gzip: {
+    filter: /\.(js|css)$/i,
+  },
+  brotli: {
+    filter: {
+      test: (_outputFilePath, outputFile) => outputFile.contents.byteLength > 1_000_000,
+    },
+  },
 })
 ```
 
